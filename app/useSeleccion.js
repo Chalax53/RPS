@@ -20,15 +20,10 @@ const useSeleccion = () => {
         NPCholder = npcSelection();
         setNPC(NPCholder);
         console.log('npcHOLDER', NPCholder)
-        var result = winner(choice, NPCholder); //aqui se va a hacer la logica - despues de que player y NPC escogen.
-        
 
+        //aqui se va a hacer la logica - despues de que player y NPC escogen.
+        var result = winner(choice, NPCholder);
 
-
-
-
-
-        
         if (result == 'Draw'){
             setMatchWinner('Draw')
             setDraws(draws + 1);
@@ -43,7 +38,7 @@ const useSeleccion = () => {
         }
         
     }
-    //Resets all values.
+    //Resets all values back to null
     function reset(){
         setWins(null);
         setLoses(null);
@@ -51,7 +46,6 @@ const useSeleccion = () => {
         setMatchWinner(null);
         setNPC(null);
     }
-
 
     return { matchOutcome, matchWinner, draws, wins, loses, NPC, reset }
 }

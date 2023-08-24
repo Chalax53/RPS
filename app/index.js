@@ -1,28 +1,32 @@
 import React from 'react';
 import { Stack, Button, Text } from "@react-native-material/core";
+import {Image, TouchableOpacity} from 'react-native';
 import useSeleccion from './useSeleccion';
+import rockIcon from './images/rock.png';
+import paperIcon from './images/paper.png';
+import scissorIcon from './images/scissor.png';
+import bStyles from './styles.js'
 
 const Home = () => {
     const { matchWinner, matchOutcome, NPC, draws, wins, loses, reset } = useSeleccion(' ');
 
     return (
-        <Stack>
-            <Stack direction="row" center='true'>
+        <Stack alignItems="center" justifyContent="center" flex={1}>
+            <Stack direction="row">
             {/* Player chooses Piedra*/}
-                <Button title="Piedra" uppercase={false} onPress={() => {
-                    console.log('1.Piedra chosen')
-                    matchOutcome(0);
-                }}/>
+                <TouchableOpacity onPress={() => matchOutcome(0)} style={bStyles.iconButtons}>
+                    <Image source={rockIcon} style={bStyles.bIcons} />
+                </TouchableOpacity>
+
             {/* Player chooses Papel*/}
-                <Button title="Papel" uppercase={false} onPress={() => {
-                    console.log('1.Papel Chosen')
-                    matchOutcome(1);
-                }}/>
+            <TouchableOpacity onPress={() => matchOutcome(1)} style={bStyles.iconButtons}>
+                    <Image source={paperIcon} style={bStyles.bIcons} />
+                </TouchableOpacity>
+
             {/* Player chooses Tijera*/}
-            <Button title="Papel" uppercase={false} onPress={() => {
-                    console.log('1.Papel Chosen')
-                    matchOutcome(2);
-            }}/>        
+            <TouchableOpacity onPress={() => matchOutcome(2)} style={bStyles.iconButtons}>
+                    <Image source={scissorIcon} style={bStyles.bIcons} />
+                </TouchableOpacity>       
             </Stack>
 
             <Stack direction="column">
@@ -44,7 +48,7 @@ const Home = () => {
             </Stack>
 
         </Stack>
-    )
+    );
 
 }
 

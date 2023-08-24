@@ -3,7 +3,6 @@
 const referee = () => {
 
     function winner(seleccion, NPC){
-        console.log('referee is analizing...')
 
         if (seleccion == NPC){ //checks wether player and NPC chose the same. if yes, break. No need to check for anything else.
             console.log('Referee called it a Draw')
@@ -35,10 +34,9 @@ const referee = () => {
         }
     }
 
+    //Random number is given and returned
     function npcSelection(){
         var x = Math.floor(Math.random() * 3);
-        console.log('atrasado, ', x)
-
         return (x);
     }
     
