@@ -1,12 +1,11 @@
 const bStyles = {
 
     iconButtons: {
-      backgroundColor: 'blue', //
+      backgroundColor: 'blue',
       padding: 10,
       borderRadius: 8,
       flexDirection: 'row',
-      alignItems: 'center',
-    
+      alignItems: 'center',    
     },
     bIcons: {
         tintColor: 'white',

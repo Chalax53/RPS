@@ -11,6 +11,7 @@ const Home = () => {
     const { matchWinner, matchOutcome, NPC, draws, wins, loses, reset } = useSeleccion(' ');
 
     return (
+    
         <Stack alignItems="center" justifyContent="center" flex={1}>
             <Stack direction="row">
             {/* Player chooses Piedra*/}
@@ -24,7 +25,7 @@ const Home = () => {
                 </TouchableOpacity>
 
             {/* Player chooses Tijera*/}
-            <TouchableOpacity onPress={() => matchOutcome(2)} style={bStyles.iconButtons}>
+            <TouchableOpacity  onPress={() => matchOutcome(2)} style={bStyles.iconButtons} >
                     <Image source={scissorIcon} style={bStyles.bIcons} />
                 </TouchableOpacity>       
             </Stack>
@@ -33,14 +34,15 @@ const Home = () => {
                 <Text>NPC Chose: {NPC}</Text>
             </Stack>
 
-            <Stack direction="column">
+            <Stack direction="column" center="true">
                 <Text>Match winner: {matchWinner} </Text>
+                <Text></Text>
                 <Text>Wins: {wins}</Text>
                 <Text>Loses: {loses}</Text>c
                 <Text>Draws: {draws} </Text>
             </Stack>
 
-            <Stack direction='row' center='true'>
+            <Stack direction='row' center='true' padding={10}>
             <Button title="Reset" uppercase={false} onPress={() => {
                     console.log('resetting stats...')
                     reset();
@@ -48,6 +50,7 @@ const Home = () => {
             </Stack>
 
         </Stack>
+     
     );
 
 }
